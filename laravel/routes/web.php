@@ -12,10 +12,10 @@
 */
 
 Route::get('/blog/', function () {
-    echo "<b>bem vindo ao blog da janaina</b> ";
+    echo "<b>bem vindo ao blog do Americo</b> ";
 });
 
-Route::get('/administrativa/', function () {
+Route::get('/administrativa/', function () { 
     echo "voce esta acessando a pagina administrativa";
 });
 
@@ -64,5 +64,38 @@ Route::get('/soma/{n_1}/{n_2}', function($n_1,$n_2,){
 	
 	});
 
+/*-------Ultima Atividade------*/
+
+
+Route::get('/tabela_usu/{usuario1}/{usuario2}/{usuario3}/{usuario4}', function ($usuario1, $usuario2, $usuario3, $usuario4) {
+	return view('tabela_usu', ['usuario1'=>$usuario1, 'usuario2'=>$usuario2, 'usuario3'=>$usuario3, 'usuario4'=>$usuario4]);
+    echo"<table border='1px'>
+    		<tr>
+    			<td>
+    				listas de usuarios
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    				 {$usuario1}
+    			</td>
+    		</tr>
+    		<tr>
+    			<td> 
+    				{$usuario2}
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    				{$usuario3}
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    				{$usuario4}
+    			</td>
+    		</tr>
+    	</table>";
+});
 
 
